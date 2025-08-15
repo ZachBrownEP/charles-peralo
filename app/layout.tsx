@@ -27,14 +27,14 @@ export default function RootLayout({
       <body className={inter.className} suppressHydrationWarning>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange={false}
           storageKey="charles-peralo-theme"
         >
           <SearchProvider>
             <Header />
-            <main>{children}</main>
+            <main className="pt-20 sm:pt-24">{children}</main>
             <Footer />
             <SearchModal />
           </SearchProvider>

@@ -22,12 +22,12 @@ export function Header() {
   }
 
   return (
-    <header className="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50 transition-all duration-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="flex justify-between items-center h-18 sm:h-20">
+    <header className="bg-white/95 backdrop-blur-md border-b border-slate-200 fixed top-0 left-0 right-0 z-50 transition-all duration-200">
+      <div className="w-full px-2 sm:px-6">
+        <div className="flex items-center h-20 sm:h-24">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3 hover-lift transition-transform duration-200">
-            <div className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-full overflow-hidden shadow-soft">
+          <Link href="/" className="flex items-center space-x-2 hover-lift transition-transform duration-200 flex-shrink-0">
+            <div className="relative w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden shadow-soft">
               <Image src="/images/charles-peralo.png" alt="Charles Peralo - Political Commentator" fill className="object-cover" priority />
             </div>
             <div className="hidden sm:block">
@@ -35,6 +35,15 @@ export function Header() {
               <p className="text-sm text-slate-600 font-medium">Daily Political Insights</p>
             </div>
           </Link>
+
+          {/* Mobile Center Content */}
+          <div className="block sm:hidden absolute left-1/2 transform -translate-x-1/2 text-center">
+            <h1 className="text-base font-bold text-slate-900">Daily Political Insights</h1>
+            <p className="text-xs text-slate-600">Stay Informed. Stay Engaged.</p>
+          </div>
+
+          {/* Spacer for mobile layout */}
+          <div className="flex-1 sm:hidden"></div>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-6">
@@ -129,25 +138,18 @@ export function Header() {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
-          <Button variant="ghost" size="sm" className="lg:hidden p-3 hover:bg-slate-100 rounded-xl transition-all duration-200 touch-target" onClick={toggleMenu}>
-            {isMenuOpen ? <X className="w-6 h-6 text-slate-600" /> : <Menu className="w-6 h-6 text-slate-600" />}
-          </Button>
+          {/* Mobile Actions */}
+          <div className="lg:hidden flex items-center gap-2">
+            <ThemeToggle />
+            <Button variant="ghost" size="sm" className="p-2 hover:bg-slate-100 rounded-xl transition-all duration-200 touch-target flex-shrink-0" onClick={toggleMenu}>
+              {isMenuOpen ? <X className="w-5 h-5 text-slate-600" /> : <Menu className="w-5 h-5 text-slate-600" />}
+            </Button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="lg:hidden border-t border-slate-200 dark:border-slate-700 py-6 animate-fade-in bg-white dark:bg-slate-900">
-            {/* Mobile Profile Section */}
-            <div className="flex items-center gap-3 px-4 pb-6 border-b border-slate-200 dark:border-slate-700 mb-4">
-              <div className="relative w-10 h-10 rounded-full overflow-hidden shadow-soft">
-                <Image src="/images/charles-peralo.png" alt="Charles Peralo" fill className="object-cover" priority />
-              </div>
-              <div>
-                <h2 className="text-lg font-bold text-slate-900 dark:text-white">Charles Peralo</h2>
-                <p className="text-sm text-slate-600 dark:text-slate-400">Political Commentary</p>
-              </div>
-            </div>
             <nav className="flex flex-col space-y-2">
               <Link
                 href="/"
@@ -232,14 +234,11 @@ export function Header() {
                   <Search className="w-5 h-5 mr-2 text-slate-600 dark:text-slate-400" />
                   Search Articles
                 </Button>
-                <div className="flex items-center gap-3">
-                  <ThemeToggle />
-                  <Link href="/subscribe" onClick={() => setIsMenuOpen(false)} className="flex-1">
-                    <Button className="bg-red-600 hover:bg-red-700 text-white px-6 py-4 rounded-xl font-semibold w-full shadow-medium hover:shadow-strong transition-all duration-200 touch-target">
-                      Subscribe Free
-                    </Button>
-                  </Link>
-                </div>
+                <Link href="/subscribe" onClick={() => setIsMenuOpen(false)}>
+                  <Button className="bg-red-600 hover:bg-red-700 text-white px-6 py-4 rounded-xl font-semibold w-full shadow-medium hover:shadow-strong transition-all duration-200 touch-target">
+                    Subscribe Free
+                  </Button>
+                </Link>
               </div>
             </nav>
           </div>
