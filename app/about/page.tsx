@@ -47,8 +47,9 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <Badge className="mb-4 bg-blue-100 text-blue-800">About Charles</Badge>
-              <h1 className="text-5xl font-bold text-gray-900 dark:text-white mb-6">
-                Making Clickbait Educational
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+                Making Clickbait<br className="sm:hidden" />
+                <span className="sm:ml-2">Educational</span>
               </h1>
               <p className="text-xl text-gray-600 dark:text-slate-300 mb-8">
                 Charles Peralo has built one of the most engaging content audiences online, with over 2 million

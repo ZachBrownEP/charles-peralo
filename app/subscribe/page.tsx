@@ -116,12 +116,12 @@ export default function SubscribePage() {
               <Gift className="w-3 sm:w-4 h-3 sm:h-4" />
               100% Free Forever
             </div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-slate-900 dark:text-white mb-4 sm:mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white mb-4 sm:mb-6 leading-tight">
               Get{" "}
               <span className="bg-gradient-to-r from-green-600 to-green-500 bg-clip-text text-transparent">
                 Free Access
-              </span>{" "}
-              to Everything
+              </span><br className="sm:hidden" />
+              <span className="sm:ml-2">to Everything</span>
             </h1>
             <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-300 mb-8 sm:mb-10 max-w-3xl mx-auto leading-relaxed px-2">
               Join thousands of readers who get daily political insights, cultural analysis, and behind-the-scenes

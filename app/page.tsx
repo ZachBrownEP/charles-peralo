@@ -32,7 +32,7 @@ export default function HomePage() {
               <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
               2M+ Followers • 2.5B Views
             </div>
-            <h1 className="text-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-slate-900 dark:text-white mb-8 animate-slide-up">
+            <h1 className="text-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-slate-900 dark:text-white mb-8 animate-slide-up leading-tight">
               Daily Insights That{" "}
               <span className="bg-gradient-to-r from-red-600 to-red-500 bg-clip-text text-transparent">
                 Actually Matter
@@ -46,7 +46,10 @@ export default function HomePage() {
             {/* Newsletter Signup Form */}
             <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-strong border border-slate-200 dark:border-slate-700 max-w-2xl mx-auto backdrop-blur-sm mb-8 hover-lift">
               <div className="text-center mb-6">
-                <h3 className="text-heading text-2xl text-slate-900 dark:text-white mb-3">Start Your Daily Briefing</h3>
+                <h3 className="text-heading text-2xl text-slate-900 dark:text-white mb-3 leading-tight">
+              Start Your<br className="sm:hidden" />
+              <span className="sm:ml-2">Daily Briefing</span>
+            </h3>
                 <p className="text-body text-base text-slate-600 dark:text-slate-300">
                   Get the most important insights delivered to your inbox every morning
                 </p>
@@ -78,8 +81,9 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1 content-spacing">
               <Badge className="mb-6 bg-blue-100 text-blue-800 px-4 py-2 text-sm font-semibold">About Charles</Badge>
-              <h2 className="text-heading text-4xl sm:text-5xl text-slate-900 dark:text-white mb-6">
-                Making Clickbait Educational and Fun
+              <h2 className="text-heading text-3xl sm:text-4xl md:text-5xl text-slate-900 dark:text-white mb-6 leading-tight">
+                Making Clickbait<br className="sm:hidden" />
+                <span className="sm:ml-0">Educational and Fun</span>
               </h2>
               <p className="text-body-large text-slate-600 dark:text-slate-300 mb-6">
                 With over 2 million followers and 2.5 billion views, Charles Peralo has mastered the art of turning clickbait headlines into educational content. From celebrity news to business economics, he makes everything from silly to serious topics actually teach you something.
@@ -130,7 +134,7 @@ export default function HomePage() {
       <section className="section-padding bg-slate-50 dark:bg-slate-800 overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
-            <h2 className="text-heading text-4xl sm:text-5xl text-slate-900 dark:text-white mb-6">Explore by Category</h2>
+            <h2 className="text-heading text-4xl sm:text-5xl text-slate-900 dark:text-white mb-6 leading-tight">Explore by<br className="sm:hidden" /><span className="sm:ml-2">Category</span></h2>
             <p className="text-body-large text-slate-600 dark:text-slate-300">Dive deep into the topics shaping our world</p>
           </div>
 
@@ -161,7 +165,7 @@ export default function HomePage() {
       <section className="section-padding bg-white dark:bg-slate-900 overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
-            <h2 className="text-heading text-4xl sm:text-5xl text-slate-900 dark:text-white mb-6">Must-Read Articles</h2>
+            <h2 className="text-heading text-4xl sm:text-5xl text-slate-900 dark:text-white mb-6 leading-tight">Must-Read<br className="sm:hidden" /><span className="sm:ml-2">Articles</span></h2>
             <p className="text-body-large text-slate-600 dark:text-slate-300">The stories everyone's talking about, analyzed and explained</p>
           </div>
 
@@ -254,7 +258,7 @@ export default function HomePage() {
       <section className="section-padding bg-slate-50 dark:bg-slate-800 overflow-hidden">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
-            <h2 className="text-heading text-4xl sm:text-5xl text-slate-900 dark:text-white mb-6">Latest Video</h2>
+            <h2 className="text-heading text-4xl sm:text-5xl text-slate-900 dark:text-white mb-6 leading-tight">Latest<br className="sm:hidden" /><span className="sm:ml-2">Video</span></h2>
             <p className="text-body-large text-slate-600 dark:text-slate-300">Watch Charles break down today's biggest story</p>
           </div>
 
@@ -272,8 +276,8 @@ export default function HomePage() {
             </div>
             <div className="text-center mt-8">
               <Badge className="mb-4 bg-red-100 text-red-800 text-sm px-3 py-2 font-semibold">Latest on YouTube</Badge>
-              <h3 className="text-heading text-2xl sm:text-3xl text-slate-900 dark:text-white mb-4">
-                Why Everyone's Talking About This Political Scandal
+              <h3 className="text-heading text-2xl sm:text-3xl text-slate-900 dark:text-white mb-4 leading-tight">
+                Why Everyone's Talking About<br className="sm:hidden" /><span className="sm:ml-2">This Political Scandal</span>
               </h3>
               <p className="text-body-large text-slate-600 dark:text-slate-300 mb-8 max-w-2xl mx-auto">
                 Breaking down the latest political controversy and what it really means for the upcoming election.
@@ -300,7 +304,7 @@ export default function HomePage() {
       <section className="section-padding bg-white dark:bg-slate-900 overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
-            <h2 className="text-heading text-4xl sm:text-5xl text-slate-900 dark:text-white mb-6">Test Your Knowledge</h2>
+            <h2 className="text-heading text-4xl sm:text-5xl text-slate-900 dark:text-white mb-6 leading-tight">Test Your<br className="sm:hidden" /><span className="sm:ml-2">Knowledge</span></h2>
             <p className="text-body-large text-slate-600 dark:text-slate-300">
               Challenge yourself with interactive quizzes on current events
             </p>
@@ -382,8 +386,8 @@ export default function HomePage() {
       <section className="section-padding bg-gradient-to-br from-red-600 to-red-700 overflow-hidden">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-12 border border-white/20">
-            <h2 className="text-display text-4xl sm:text-5xl text-white mb-6">
-              Don't Miss Tomorrow's Insights
+            <h2 className="text-display text-4xl sm:text-5xl text-white mb-6 leading-tight">
+              Don't Miss<br className="sm:hidden" /><span className="sm:ml-2">Tomorrow's Insights</span>
             </h2>
             <p className="text-body-large text-red-100 mb-8">
               Join 50,000+ readers who rely on Charles Peralo's daily newsletter for the analysis that matters
