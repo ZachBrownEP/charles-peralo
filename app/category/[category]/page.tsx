@@ -49,20 +49,32 @@ const categoryConfig = {
   }
 }
 
-export default async function CategoryPage({ params }: { params: Promise<{ category: string }> }) {
-  const { category } = await params
+export default function CategoryPage({ params }: { params: Promise<{ category: string }> }) {
+  const [category, setCategory] = useState<string>("")
   const [visibleArticles, setVisibleArticles] = useState(9)
   const [articles, setArticles] = useState<ArticleMetadata[]>([])
   const [loading, setLoading] = useState(true)
+  
+  useEffect(() => {
+    async function getParams() {
+      const { category: categoryParam } = await params
+      setCategory(categoryParam)
+    }
+    getParams()
+  }, [params])
 
   const categoryKey = category.toLowerCase() as keyof typeof categoryConfig
-  const config = categoryConfig[categoryKey]
-
-  if (!config) {
-    notFound()
-  }
+  const config = categoryKey ? categoryConfig[categoryKey] : null
 
   useEffect(() => {
+    if (!category) return
+    
+    const categoryKey = category.toLowerCase() as keyof typeof categoryConfig
+    if (!categoryConfig[categoryKey]) {
+      notFound()
+      return
+    }
+
     async function fetchArticles() {
       try {
         const response = await fetch('/api/articles')
@@ -79,7 +91,18 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
       }
     }
     fetchArticles()
-  }, [categoryKey])
+  }, [category])
+
+  if (!category || !config) {
+    return (
+      <div className="min-h-screen bg-white dark:bg-slate-900 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-slate-600 dark:border-slate-300 mx-auto"></div>
+          <p className="text-slate-600 dark:text-slate-300 mt-4">Loading...</p>
+        </div>
+      </div>
+    )
+  }
 
   const loadMore = () => {
     setVisibleArticles((prev) => Math.min(prev + 6, articles.length))
